@@ -17,7 +17,7 @@ class AppNotification {
     required this.isRead
   });
 
-    // Convert object to Firestore map
+  // Convert object to Firestore map
   Map<String, dynamic> toMap() {
     return {
       'id': id,
