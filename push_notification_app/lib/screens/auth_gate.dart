@@ -28,6 +28,7 @@ class _AuthGateState extends State<AuthGate> {
         }
         // if has data i.e. non-null, it means logged in
         if ( snapshot.hasData ) {
+          // check role and display appropriate screens
           return Text("Logged in");
         }
         return Text("Hello world");
