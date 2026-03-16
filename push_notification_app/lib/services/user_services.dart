@@ -21,4 +21,16 @@ class UserServices {
         }
         return AppUser.fromMap(data);
     }
+
+    // Create user
+    static Future<void> createUser(String uid, String email, String role) async {
+        // create app user object
+        final appUser = AppUser(id: uid, email: email, role: role);
+
+        // save to fireStore uid as document id using set()
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .set(appUser.toMap());
+    }
 }

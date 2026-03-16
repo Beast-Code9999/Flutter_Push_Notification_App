@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:push_notification_app/screens/role_gate.dart';
 
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
@@ -29,7 +30,7 @@ class _AuthGateState extends State<AuthGate> {
         // if has data i.e. non-null, it means logged in
         if ( snapshot.hasData ) {
           // check role and display appropriate screens
-          return Text("Logged in");
+          return RoleGate();
         }
         return Text("Hello world");
       }
