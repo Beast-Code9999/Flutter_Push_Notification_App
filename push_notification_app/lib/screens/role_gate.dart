@@ -7,7 +7,7 @@ class RoleGate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<AppUser>(
-      future: null, 
+      future: null, // 
       builder: (context, snapshot) {
         if (snapshot.hasError) { // If future or stream failed
           return Center(child: Text("Something went wrong"));

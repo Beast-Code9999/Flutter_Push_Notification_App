@@ -9,7 +9,7 @@ class AppUser {
     required this.role,
   });
 
-  // Convert object to Firestore map
+  // Convert object to Firestore map (Save)
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -18,7 +18,7 @@ class AppUser {
     };
   }
 
-  // Convert Firestore map to object
+  // Convert Firestore map to object (Fetch)
   factory AppUser.fromMap(Map<String, dynamic> map) {
     return AppUser(
       id: map['id'] ?? '',
