@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:push_notification_app/screens/login_screen.dart';
 import 'package:push_notification_app/screens/role_gate.dart';
 
 class AuthGate extends StatefulWidget {
@@ -32,7 +33,7 @@ class _AuthGateState extends State<AuthGate> {
           // check role and display appropriate screens
           return RoleGate();
         }
-        return Text("Hello world");
+        return LoginScreen();
       }
     );
   }

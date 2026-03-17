@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:push_notification_app/firebase_options.dart';
+import 'package:push_notification_app/screens/auth_gate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class PushNotificationApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Push Notifcation App",
-      home: Text("Hello world"),
+      home: AuthGate(),
     );
   }
 }

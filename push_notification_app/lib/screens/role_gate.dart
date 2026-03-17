@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:push_notification_app/models/app_user.dart';
+import 'package:push_notification_app/screens/admin_home_screen.dart';
+import 'package:push_notification_app/screens/student_home_screen.dart';
+import 'package:push_notification_app/services/user_services.dart';
 
 class RoleGate extends StatelessWidget {
   const RoleGate({super.key});
@@ -7,7 +10,7 @@ class RoleGate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<AppUser>( // One time fetching and displaying of future data
-      future: null, // 
+      future: UserServices.getCurrentUser(), // 
       builder: (context, snapshot) {
         if (snapshot.hasError) { // If future or stream failed
           return Center(child: Text("Something went wrong"));
@@ -20,11 +23,10 @@ class RoleGate extends StatelessWidget {
         final user = snapshot.data!;
 
         if (user.role == 'admin') { // show admin home page
-          return Text("Admin screen here");
+          return AdminHomeScreen();
         }
 
-        return Text("Student home screen here"); // Show student home page
-
+        return StudentHomeScreen(); // Show student home page
       }
     );
   }
