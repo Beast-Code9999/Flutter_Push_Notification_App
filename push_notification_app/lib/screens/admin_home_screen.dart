@@ -57,7 +57,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
+          IconButton( // sign out button
             onPressed: () {
               FirebaseAuth.instance.signOut();
             }, 
@@ -69,7 +69,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            TextField( // Title
+            TextField( // Title input
               controller: _titleController,
               decoration: InputDecoration(
                 label: Text("Add title of Notification"),
@@ -79,7 +79,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
         
             SizedBox(height: 20),
         
-            TextField( // Content
+            TextField( // Content input
               controller: _contentController,
               decoration: InputDecoration(
                 label: Text("Add content of Notification"),
@@ -91,7 +91,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  _sendNotifciation();
+                  _sendNotifciation(); // call _sendNotifciation and saves to Firestore notification collection
                 }, 
                 child: Text("Send notification")
               ),

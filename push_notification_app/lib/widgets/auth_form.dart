@@ -26,36 +26,39 @@ class _AuthFormState extends State<AuthForm> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            TextField(
-              // username
-              controller: _usernameController,
-              decoration: InputDecoration(
-                label: Text("Username")
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            children: [
+              TextField(
+                // username
+                controller: _usernameController,
+                decoration: InputDecoration(
+                  label: Text("Username")
+                ),
               ),
-            ),
-            TextField(
-              // password
-              controller: _passwordController,
-              decoration: InputDecoration(
-                label: Text("Password")
+              TextField(
+                // password
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  label: Text("Password")
+                ),
+                obscureText: true,
+        
               ),
-              obscureText: true,
-
-            ),
-            ElevatedButton(
-              onPressed: () {
-                widget.onSubmit(_usernameController.text, _passwordController.text);
-              }, 
-              child: Text(widget.title)
-            ),
-            
-            SizedBox(height: 20,),
-
-            widget.bottomLink,
-          ],
+              ElevatedButton(
+                onPressed: () {
+                  widget.onSubmit(_usernameController.text, _passwordController.text);
+                }, 
+                child: Text(widget.title)
+              ),
+              
+              SizedBox(height: 20,),
+        
+              widget.bottomLink,
+            ],
+          ),
         ),
       ),
     );
